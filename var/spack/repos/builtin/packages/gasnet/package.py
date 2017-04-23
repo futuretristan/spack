@@ -60,5 +60,8 @@ class Gasnet(AutotoolsPackage):
             # See the Legion webpage for details on when to/not to use.
             "--disable-pshm",
             "--with-segment-mmap-max=64MB",
+            "CC=cc -fPIC",
+            "CXX=c++ -fPIC",
+            "MPI_CC=mpicc -fPIC"
         ]
         return args

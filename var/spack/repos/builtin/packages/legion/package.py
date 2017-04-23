@@ -62,7 +62,8 @@ class Legion(CMakePackage):
             return 'Release'
 
     def cmake_args(self):
-        options = ['-DLegion_USE_GASNet=ON', '-DLegion_BUILD_EXAMPLES=ON']
+        options = ['-DLegion_USE_GASNet=ON', '-DLegion_BUILD_EXAMPLES=ON',
+                '-DBUILD_SHARED_LIBS=ON']
 
         if '+mpi' in self.spec:
             options.append('-DGASNet_CONDUIT=mpi')
